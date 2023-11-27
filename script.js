@@ -6,7 +6,7 @@ function addTenElements(){
 	const Li = document.createElement("li");
 	Li.innerText = "Item"+" "+x;
 	x++;
-	ScrollContainer.appendChild("Li");
+	ScrollContainer.appendChild(Li);
  }
 }
 
@@ -14,7 +14,7 @@ ScrollContainer.addEventListener("scroll",() =>{
 	const TotalScrollHt = ScrollContainer.scrollHeight;
 	const visibleHt = ScrollContainer.clientHeight;
 	const ScrolledHt = ScrollContainer.ScrollTop;
-	const remainingHtToBeScrolled = TotalScrollHt - (visibleHt+ScrolledHt);
+	let remainingHtToBeScrolled = TotalScrollHt - (visibleHt+ScrolledHt);
 	if(remainingHtToBeScrolled < 4){
 		addTenElements()
 	}
